@@ -17,7 +17,7 @@ a {
 }
 
 .main-container{
-max-width: 1400px; 
+max-width: 1600px; 
 margin: auto;
 width: 100%;
 
@@ -250,6 +250,10 @@ text-align: end;
   left: 8%; */
   top: -25%;
   left: 25%;
+}
+.banner-desc img{
+  width: 250px;
+  height: 250px;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -618,9 +622,46 @@ margin-top: 160px;
   margin-top: 10px;
 }
 
+@media screen and (max-width:1000px) {
+.banner-desc .right h3{
+  font-weight: 800;
+  font-size: 50px;
+}
+.banner-desc .right{
+  line-height: 1.55;
+}
+}
+
+@media screen and (max-width:930px) {
+  .banner-desc .right h3{
+    font-weight: 800;
+    font-size: 40px;
+}
+.banner-desc .right{
+  line-height: 1.75;
+}
+}
+
+@media screen and (max-width:870px) {
+  .banner-desc .right h3{
+    font-weight: 800;
+    font-size: 30px;
+}
+.banner-desc .right{
+  line-height: 2;
+}
+}
+
+@media screen and (max-width:810px) {
+  .banner-desc .right h3{
+    font-weight: 800;
+    font-size: 28px;
+}
+}
+
 @media screen and (max-width:800px) {
   .hero-banner-container{
-    height: 560px;
+    height: 560px; 
   }
   .hero-banner-image{
     width: 77%;
@@ -638,18 +679,29 @@ margin-top: 160px;
     top: 6%;
     height: 56%
   }
+  .banner-desc img{
+    margin-top:-60px;
+    margin: 10px;
+    width: 250px;
+    height: 250px;
+  }
   .banner-desc .left h3{
     font-weight: 900;
     font-size: 50px;
     margin-left: 5px;
   }
   .banner-desc .left p{
-    margin:18px;
+    margin: 18px;
+  }
+  .banner-desc .right{
+    line-height: 1.2;
   }
   .banner-desc .right h3{
+    margin-top: -5px;
     font-size: 45px;
   }
   .banner-desc .right p{
+    margin-top: -5px;
     font-size: 18px;
   }
   .banner-desc .right .company-desc{
@@ -759,5 +811,62 @@ margin-top: 160px;
 .btn-container{
   width: 300px;
   margin: auto;
+}
+.banner-desc button{
+  padding: 10px 16px;
+  margin-top: 8px;
+}
+}
+
+@media screen and (max-width:550px) {
+.banner-desc img{
+  margin-top:-30px;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+.banner-desc .right p{
+  margin-top: 10px;
+}
+.banner-desc .right h3{
+  margin-top: 10px;
+}
+.banner-desc button{
+  padding: 10px 16px;
+  margin-top: 30px;
+}
+}
+
+@media screen and (max-width:500px) {
+  .banner-desc img{
+    margin-top:-30px;
+    width: 160px;
+    height: 160px;
+    display: block;
+  }
+  .banner-desc .right p{
+    margin-top: 10px;
+  }
+  .banner-desc .right h3{
+    margin-top: 10px;
+  }
+  .banner-desc button{
+    margin-top: 30px;
+  }
+  }
+
+@media screen and (max-width:455px) {
+.banner-desc img{
+  width: 200px;
+  height: 200px;
+}
+.banner-desc .right p{
+  display: none;
+}
+.banner-desc .right h3{
+  display: none;
+}
+.banner-desc button{
+  margin-top: -30px;
 }
 }
