@@ -3,7 +3,7 @@ import React from 'react'
 import { client } from '../lib/client'
 import { Product, FooterBanner, HeroBanner } from '../components';
 
-const Home = ({ products, bannerData }) => {
+const Home = ({ products, bannerData, footerBannerData }) => {
   return (
     <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
@@ -17,7 +17,7 @@ const Home = ({ products, bannerData }) => {
         { products?.map((product) => <Product key={product._id} product={product}/>) }
       </div>
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      <FooterBanner footerBanner={footerBannerData && footerBannerData[0]} />
     </div>
   )
 }
@@ -29,8 +29,11 @@ export const getServerSideProps = async () => {
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
+  const footerBannerQuery = '*[_type == "footerBanner"]';
+  const footerBannerData = await client.fetch(footerBannerQuery);
+
   return {
-    props: { products, bannerData }
+    props: { products, bannerData, footerBannerData }
   }
 }
 
