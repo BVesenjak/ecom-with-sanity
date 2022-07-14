@@ -8,6 +8,10 @@ import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
+// store cart in local storage #attempt
+//*************************************
+// const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
+
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();

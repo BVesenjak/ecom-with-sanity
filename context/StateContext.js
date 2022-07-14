@@ -13,6 +13,14 @@ export const StateContext = ({ children }) => {
     let foundProduct;
     let index;
 
+    // Store cart to local storage #attempt
+    // ************************************
+    //useEffect(() => {
+    //    localStorage.setItem("cart", JSON.stringify(cartItems));
+    //    console.log(localStorage.getItem('cart'));
+
+    //}, [cartItems]);
+
     const onAdd = (product, quantity) => {
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
         
@@ -74,6 +82,9 @@ export const StateContext = ({ children }) => {
             return prevQty -1;
         });
     }
+    const resetQty = () => {
+        setQty(1);
+    }
 
     return (
         <Context.Provider value={{
@@ -90,7 +101,8 @@ export const StateContext = ({ children }) => {
             onRemove,
             setCartItems,
             setTotalPrice,
-            setTotalQuantities
+            setTotalQuantities,
+            resetQty
         }}>
             {children}
         </Context.Provider>
